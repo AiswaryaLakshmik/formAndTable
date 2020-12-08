@@ -22,10 +22,10 @@
     </style>
 </head>
 <body>
-    <form>
+    
         <div>
             <center> <table>
-           <form onsubmit="myFunction()">
+           <form>
                <tr>
             <td> <label for="fname">First Name : </label></td><td align="right">
              <td><input type="text" id ="fname" name="fname" placeholder="First Name"></td>
@@ -50,9 +50,9 @@
                <td> 
                 
              <label for="gender">Gender : </label></td><td align="right"></td>
-             <td><input type="radio" id="male" name="Gender" id="gender" value="male">
+             <td><input type="radio" id="male" name="Gender" value="male">
              <label for="male">Male</label>  
-             <input type="radio" id="female" name="Gender" id="gender" value="female">
+             <input type="radio" id="female" name="Gender" value="female">
                 <label for="female">Female</label></td>
 
              </tr>
@@ -72,12 +72,12 @@
               <td> <input type="text" name="country" id="country" placeholder="country"></td>
               </tr>
               <tr >
-            <td align="center" colspan="3"> <button type="submit" >Submit</button></td>
+            <td align="center" colspan="3"> <input type="button" value="Add" onclick="myFunction()"></td>
            </tr>
            </form>
        </table></center>    
          </div>
-    </form>
+    
     <h1> Details</h1><center>
     <table border=1 id="mytable">
         <tr>
@@ -103,15 +103,17 @@
             var cell6=row.insertCell();
             var cell7=row.insertCell();
             var cell8=row.insertCell();
+            console.log("Hi aishwarya relax");
+            console.log(document.getElementById('fname').value);
             cell1.innerHTML=document.getElementById('fname').value;
             cell2.innerHTML=document.getElementById('lname').value;
             cell3.innerHTML=document.getElementById('address').value;
             cell4.innerHTML=document.getElementById('pincode').value;
-            cell5.innerHTML=document.getElementById('gender').value;
+            cell5.innerHTML=document.querySelector('input[name="Gender"]:checked').value;
             cell6.innerHTML=document.getElementById('food').value;
-            cell7.innerHTMLdocument.getElementById('state').value;
+            cell7.innerHTML=document.getElementById('state').value;
             cell8.innerHTML=document.getElementById('country').value;
-
+            tbl.appendChild(row);
         }
     </script>
 </body>
